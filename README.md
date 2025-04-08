@@ -1,26 +1,28 @@
-# k8s-soc-lab
+k8s-soc-lab
+Laboratorio para la detección de amenazas en entornos Kubernetes utilizando Suricata y Minikube.
 
-Laboratorio de detección de amenazas en Kubernetes con Suricata y Minikube.
+Descripción
+Este proyecto permite desplegar un entorno de análisis de tráfico de red con Suricata como IDS (sistema de detección de intrusos) dentro de un clúster Kubernetes local. Incluye:
 
-## 🔍 Descripción
+Despliegue de Suricata como Deployment y como DaemonSet.
 
-Este laboratorio simula un entorno básico de detección IDS usando Suricata en Kubernetes. Incluye:
+Pod atacante para generar tráfico malicioso (nmap, ping, etc.).
 
-- Suricata desplegado como **Deployment** y como **DaemonSet**
-- Un pod atacante para simular tráfico malicioso (`nmap`, `ping`, etc.)
-- Captura y visualización de logs desde los pods de Suricata
+Recolección y análisis de logs generados por Suricata.
 
-## ⚙️ Requisitos
+Requisitos
+Ubuntu con Minikube y Docker instalados.
 
-- Ubuntu + Minikube + Docker instalados
-- `kubectl` configurado
-- VSCode para edición del proyecto
+kubectl configurado y apuntando al clúster local.
 
-## 🚀 Instalación
+Visual Studio Code u otro editor para modificar archivos del proyecto.
 
-1. Clonar el repositorio:
+Instalación
+Clonar el repositorio:
 
-```bash
+bash
+Copiar
+Editar
 git clone https://github.com/dekapala/k8s-soc-lab.git
 cd k8s-soc-lab
-´´´
+Desplegar el entorno siguiendo los manifiestos disponibles en la carpeta manifests/.
