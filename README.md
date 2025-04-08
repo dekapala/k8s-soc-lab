@@ -18,11 +18,12 @@ kubectl configurado y apuntando al clúster local.
 Visual Studio Code u otro editor para modificar archivos del proyecto.
 
 Instalación
+
 Clonar el repositorio:
 
-bash
-Copiar
-Editar
+```bash
 git clone https://github.com/dekapala/k8s-soc-lab.git
 cd k8s-soc-lab
+```
+
 Desplegar el entorno siguiendo los manifiestos disponibles en la carpeta manifests/.
