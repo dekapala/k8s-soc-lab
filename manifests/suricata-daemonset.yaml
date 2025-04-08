@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: suricata
+  labels:
+    app: suricata
+spec:
+  selector:
+    matchLabels:
+      app: suricata
+  template:
+    metadata:
+      labels:
+        app: suricata
+    spec:
+      hostNetwork: true
+      containers:
+      - name: suricata
+        image: jasonish/suricata
+        securityContext:
+          privileged: true
+        volumeMounts:
+        - name: host-dev
+          mountPath: /dev
+        - name: suricata-logs
+          mountPath: /var/log/suricata
+      volumes:
+      - name: host-dev
+        hostPath:
+          path: /dev
+      - name: suricata-logs
+        emptyDir: {}

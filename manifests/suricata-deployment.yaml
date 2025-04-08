@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: suricata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: suricata
+  template:
+    metadata:
+      labels:
+        app: suricata
+    spec:
+      containers:
+        - name: suricata
+          image: jasonish/suricata:latest
+          securityContext:
+            privileged: true
+          command: ["suricata", "-i", "eth0", "-v"]
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
